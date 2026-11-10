@@ -66,7 +66,7 @@ The trained checkpoints are included in `models/` and are tracked by Git. The da
 2. Follow `data/README.md` to place dataset files in the expected local folders. The notebooks preserve the original project steps; update their project-folder paths for your clone and run them from top to bottom.
 3. Run `notebooks/MTSD_Object_Detection.ipynb` to inspect MTSD annotations, prepare the one-class YOLO detection set, and train/evaluate the detector.
 4. Run `notebooks/02_CNN_Training_and_Experiments.ipynb` to create the selected-class manifests, train the baseline and augmented CNNs, and save training histories and plots.
-5. Copy the best detector and augmented classifier checkpoints to `models/` as listed above to run the website.
+5. The included checkpoints are already in `models/`. If you retrain the models, replace them with the new best checkpoints before running the website.
 
 The recovered CNN experiment records seed 42, 64 × 64 inputs, batch size 64, 20 epochs, Adam with learning rate 0.001, and cross-entropy loss. Its augmentation pipeline uses 10-degree random rotation, 5% translation, scale 0.95–1.05, and color jitter. See [`docs/SOURCE_RECOVERY.md`](docs/SOURCE_RECOVERY.md) for provenance and the full experiment notes.
 
@@ -84,7 +84,7 @@ All scores below are from validation data. They are not independent test-set sco
 
 The CNN experiment reports 60,162 training crops, 8,736 validation crops, and 326 selected classes. The dataset preparation summary and raw training histories are in `results/` and `data/manifests/`.
 
-The project uses a custom 326-class mapping. The MTSD paper describes a 313-class benchmark taxonomy, so the project’s selected mapping should not be described as the unchanged official taxonomy. Obtain MTSD from the [official Mapillary dataset page](https://www.mapillary.com/dataset/trafficsign); the full images are not redistributed here. Obtain MTSD from the [official Mapillary dataset page](https://www.mapillary.com/dataset/trafficsign); the full images are not redistributed here.
+The project uses a custom 326-class mapping. The MTSD paper describes a 313-class benchmark taxonomy, so the project’s selected mapping should not be described as the unchanged official taxonomy. Obtain MTSD from the [official Mapillary dataset page](https://www.mapillary.com/dataset/trafficsign); the full images are not redistributed here.
 
 ## Dataset and evaluation limitations
 
