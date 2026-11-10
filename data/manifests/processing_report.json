@@ -1,0 +1,12 @@
+{
+    "training_split_image_count": 36589,
+    "available_image_count": 36589,
+    "processed_image_count": 36589,
+    "saved_crop_count": 180284,
+    "missing_image_count": 0,
+    "missing_annotation_count": 0,
+    "failed_image_count": 0,
+    "missing_image_ids": [],
+    "missing_annotation_ids": [],
+    "failed_images": []
+}

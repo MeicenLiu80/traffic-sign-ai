@@ -1,0 +1,3 @@
+Model,Best Validation Accuracy (%),Best Epoch
+Baseline CNN,90.65934065934066,19
+CNN + Data Augmentation,92.91437728937728,17

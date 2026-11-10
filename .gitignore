@@ -1,0 +1,39 @@
+# Python artifacts
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Local dataset images, generated crops, and split-specific working folders
+/data/raw/
+/data/raw_images/
+/data/local_mtsd/
+/train/
+/val/
+/test/
+/YOLO_Detection_Dataset/
+/YOLO_Detection_Results/
+/Baseline_CNN_Results/
+/CNN_Data_Augmentation_Results/
+/Detection_Inspection/
+/Project_Backup/
+/runs/
+/wandb/
+
+# Ignore unrelated local checkpoints, but include the authorized project models.
+*.pt
+*.pth
+!/models/*.pt
+!/models/*.pth
+
+# Uploads and generated website inference outputs
+/uploads/*
+!uploads/.gitkeep
+/static/results/*
+!static/results/.gitkeep
+
+# Local and editor files
+.env
+.DS_Store
+/static/_pgbackup/
+

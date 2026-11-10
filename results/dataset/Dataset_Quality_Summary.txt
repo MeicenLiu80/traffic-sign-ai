@@ -1,0 +1,35 @@
+TRAFFIC SIGN DATASET QUALITY SUMMARY
+====================================
+
+Dataset preparation:
+Original training scene images: 36,589
+Original validation scene images: 5,320
+All cropped training objects: 180,284
+other-sign objects: 118,781
+Specific sign objects excluding other-sign: 61,503
+Selected classes: 326
+Selected training images: 60,162
+Selected validation images: 8,736
+
+Selected training class distribution:
+Average images per class: 184.55
+Median images per class: 94.00
+Largest class: regulatory--yield--g1 (2,428)
+Smallest class: regulatory--no-motor-vehicle-trailers--g1 (30)
+
+Validation class coverage:
+Classes represented in validation: 326/326
+Classes without validation samples: 0
+
+Sample image readability check:
+Images checked: 300
+Readable images: 300
+Unreadable images: 0
+Sample width range: 8 to 370 pixels
+Sample height range: 11 to 391 pixels
+
+Notes:
+- The image readability check uses a sample of up to 300 training images.
+- The original image files were not changed by this analysis.
+- The selected classes exclude other-sign and classes with fewer than 30 training samples.
+- The class threshold was determined using training data only.

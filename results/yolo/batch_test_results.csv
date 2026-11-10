@@ -1,0 +1,49 @@
+﻿image_name,detection_number,predicted_class,yolo_confidence,cnn_confidence,x_min,y_min,x_max,y_max
+zYZGM140IuWod-ceElgp5w.jpg,1,warning--pedestrians-crossing--g4,0.781,0.8703,2780,2105,2907,2248
+zYZGM140IuWod-ceElgp5w.jpg,2,regulatory--yield--g1,0.4933,1.0,3132,2131,3207,2228
+zYZGM140IuWod-ceElgp5w.jpg,3,regulatory--end-of-speed-limit-zone--g1,0.4796,0.4552,3070,1637,3264,1795
+zYZGM140IuWod-ceElgp5w.jpg,4,regulatory--one-way-right--g3,0.4274,0.882,3109,1800,3272,1961
+zYZGM140IuWod-ceElgp5w.jpg,5,warning--texts--g2,0.3792,0.8978,3969,2138,4094,2304
+zYZGM140IuWod-ceElgp5w.jpg,6,regulatory--maximum-speed-limit-25--g1,0.3484,0.8471,2874,1610,3050,1788
+zYZGM140IuWod-ceElgp5w.jpg,7,complementary--go-right--g1,0.3079,0.9921,2883,1784,3045,1899
+zYZGM140IuWod-ceElgp5w.jpg,8,complementary--turn-left--g2,0.2993,0.4737,3068,1553,3249,1636
+Aa_GO-KSKkmL7xW8FuL-9g.jpg,1,information--pedestrians-crossing--g1,0.586,0.6304,1078,1422,1223,1503
+1Qug7AzcKLiVUgBWVjAiKg.jpg,1,regulatory--no-right-turn--g1,0.8092,0.9997,555,1298,715,1509
+1Qug7AzcKLiVUgBWVjAiKg.jpg,2,complementary--turn-left--g2,0.6916,0.1924,565,1527,714,1693
+1Qug7AzcKLiVUgBWVjAiKg.jpg,3,regulatory--no-stopping--g15,0.5929,0.9926,2457,1388,2550,1474
+Hzzp2uY_NzmljfCewtD-jg.jpg,1,regulatory--bicycles-only--g3,0.318,0.4607,2022,595,2148,647
+Hzzp2uY_NzmljfCewtD-jg.jpg,2,warning--junction-with-a-side-road-perpendicular-left--g3,0.2793,0.9994,2082,783,2159,848
+Hzzp2uY_NzmljfCewtD-jg.jpg,3,warning--traffic-signals--g3,0.2761,0.1719,2361,729,2441,815
+gMCdDVDZaA9IlKtbVmhGoA.jpg,1,regulatory--stop--g1,0.2844,0.9092,1089,1191,1165,1274
+FHVJt7i5n7rtUGlnXlAGzA.jpg,1,information--pedestrians-crossing--g1,0.7226,1.0,1916,1510,2024,1613
+FHVJt7i5n7rtUGlnXlAGzA.jpg,2,information--pedestrians-crossing--g1,0.5409,1.0,1005,1497,1090,1594
+FHVJt7i5n7rtUGlnXlAGzA.jpg,3,regulatory--no-heavy-goods-vehicles--g2,0.3051,0.9276,2306,1527,2372,1597
+BmrkOacf1fRnDr5y7yIdoQ.jpg,1,information--parking--g1,0.7836,0.387,816,135,868,186
+BmrkOacf1fRnDr5y7yIdoQ.jpg,2,information--parking--g1,0.6627,0.5966,690,188,721,233
+BmrkOacf1fRnDr5y7yIdoQ.jpg,3,information--parking--g1,0.36,0.3704,691,233,723,264
+9L3cKI2xY_Mdf-BYg7cz_g.jpg,1,warning--texts--g2,0.7854,0.9966,1443,764,1603,928
+9L3cKI2xY_Mdf-BYg7cz_g.jpg,2,regulatory--bicycles-only--g1,0.5297,0.2218,1590,757,1676,898
+9L3cKI2xY_Mdf-BYg7cz_g.jpg,3,regulatory--maximum-speed-limit-25--g2,0.4282,0.279,919,882,1009,928
+9L3cKI2xY_Mdf-BYg7cz_g.jpg,4,warning--height-restriction--g2,0.3672,0.5436,1440,758,1675,932
+9L3cKI2xY_Mdf-BYg7cz_g.jpg,5,complementary--maximum-speed-limit-55--g1,0.35,0.993,1480,941,1545,1014
+9L3cKI2xY_Mdf-BYg7cz_g.jpg,6,information--parking--g5,0.3468,0.2973,1957,795,2008,929
+9L3cKI2xY_Mdf-BYg7cz_g.jpg,7,information--limited-access-road--g1,0.3338,0.3122,962,883,1056,928
+9L3cKI2xY_Mdf-BYg7cz_g.jpg,8,regulatory--priority-road--g4,0.3062,0.4231,1119,927,1152,970
+9L3cKI2xY_Mdf-BYg7cz_g.jpg,9,regulatory--buses-only--g1,0.2691,0.2914,918,880,1047,928
+vHAXKKU9NHOUpSKfTYscOA.jpg,0,No detection,,,,,,
+7uKiEF0O89mZDBohGgUQlA.jpg,0,No detection,,,,,,
+XnNZ_bQHGO5vK3xUbNKlCQ.jpg,0,No detection,,,,,,
+p-F2V1qwHff5ildoy-vKYg.jpg,1,warning--crossroads--g1,0.3871,0.3824,2957,1786,3065,1859
+2FM0qDUdbmibrc3SWw2Xkg.jpg,1,regulatory--bicycles-only--g1,0.7447,0.4869,1747,278,1838,366
+2FM0qDUdbmibrc3SWw2Xkg.jpg,2,complementary--go-right--g1,0.5974,0.9999,1750,364,1836,407
+28-cvthV9XPklWKVnfiO7A.jpg,1,regulatory--end-of-speed-limit-zone--g1,0.8165,0.8613,511,1038,784,1310
+8LT_SmWBjKXrcCNsDQpEtw.jpg,1,complementary--keep-left--g1,0.4636,0.4843,1719,1145,1765,1200
+8LT_SmWBjKXrcCNsDQpEtw.jpg,2,complementary--one-direction-right--g1,0.4535,0.7961,1719,1208,1773,1269
+8LT_SmWBjKXrcCNsDQpEtw.jpg,3,complementary--chevron-right--g1,0.2852,0.94,1722,1225,1772,1280
+FaZJpEGLvQt2IeSbMiUPlg.jpg,1,regulatory--no-entry--g1,0.5025,0.5864,3190,1756,3365,2043
+FaZJpEGLvQt2IeSbMiUPlg.jpg,2,regulatory--maximum-speed-limit-5--g1,0.28,0.5119,3210,1754,3350,1904
+FaZJpEGLvQt2IeSbMiUPlg.jpg,3,information--interstate-route--g1,0.2616,0.3007,2192,2023,2268,2079
+FzLRprXe9xvkaL223rJvbQ.jpg,0,No detection,,,,,,
+TD8AgDhCvBfn5L6u2YGH6g.jpg,0,No detection,,,,,,
+yAa2sfH8Jpqhyud6hbkckQ.jpg,1,warning--curve-left--g2,0.6995,0.6078,549,498,596,548
+1uwqAqyrWz_HTfstHimqcA.jpg,1,regulatory--yield--g1,0.3215,0.834,1783,1965,1836,2023

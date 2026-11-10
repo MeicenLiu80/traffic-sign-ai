@@ -1,0 +1,10 @@
+{
+    "validation_split_image_count": 5320,
+    "processed_image_count": 5320,
+    "saved_crop_count": 8736,
+    "skipped_object_count": 17364,
+    "missing_image_count": 0,
+    "missing_annotation_count": 0,
+    "failed_image_count": 0,
+    "selected_class_count": 326
+}

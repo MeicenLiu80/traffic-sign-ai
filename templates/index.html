@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A computer vision research project for recognizing Canadian road signs with YOLO11n and a CNN classifier.">
+    <title>Traffic Sign AI | Detection & Classification</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}?v=5">
+</head>
+<body>
+    <div class="page-shell">
+        <header class="topbar" id="top">
+            <a class="brand" href="/" aria-label="Traffic Sign AI home">
+                <span class="brand-mark">TS</span>
+                <span>Traffic Sign <strong>AI</strong></span>
+            </a>
+            <nav class="top-nav">
+                <a href="#how-it-works">How it works</a>
+                <a href="#about">About</a>
+                <a class="nav-cta" href="#try-it">Try the demo <span aria-hidden="true">↗</span></a>
+            </nav>
+        </header>
+
+        <main>
+            <!-- This section introduces the project and places the working upload interaction in the first screen. -->
+            <section class="hero">
+                <div class="hero-copy">
+                    <div class="eyebrow"><span class="status-dot"></span> COMPUTER VISION PROJECT</div>
+                    <h1><span>Understand the road.</span></h1>
+                    <p class="hero-description">
+                        A computer vision research project based on Canadian road signs, exploring recognition to support intelligent-driving assistance with YOLO object detection and a 326-class CNN classifier.
+                    </p>
+                    <div class="hero-actions">
+                        <a class="button button-secondary" href="#how-it-works">Explore the pipeline</a>
+                    </div>
+                    <div class="hero-note">
+                        <span class="status-dot"></span>
+                        {% if model_ready %}
+                            Models loaded · {{ device_name }}
+                        {% else %}
+                            Model setup required · see setup instructions
+                        {% endif %}
+                    </div>
+                    <!-- This card keeps the existing Flask upload form available directly from the hero. -->
+                    <div class="panel upload-panel hero-upload-panel" id="try-it">
+                        <div class="panel-title"><span class="step-number">01</span><div><h3>Analyze a road image</h3><p>Upload your own image or try a Canadian road-sign example.</p></div></div>
+                        <!-- These sample buttons let visitors run the model without finding an image on their device. -->
+                        <div class="sample-section" aria-label="Canadian traffic sign sample images">
+                            <div class="sample-heading"><strong>Try a sample image</strong><span>Click to run the model</span></div>
+                            <div class="sample-grid">
+                                <button class="sample-option" type="button" data-sample-url="{{ url_for('static', filename='samples/canadian-road-scene.webp') }}" data-sample-name="canadian-road-scene.webp">
+                                    <img src="{{ url_for('static', filename='samples/canadian-road-scene.webp') }}" alt="Canadian urban intersection with traffic lights and road signs">
+                                    <span class="sample-option-footer"><strong>Canadian road scene</strong><span>Try sample →</span></span>
+                                </button>
+                                <button class="sample-option" type="button" data-sample-url="{{ url_for('static', filename='samples/canadian-sign-examples.webp') }}" data-sample-name="canadian-sign-examples.webp">
+                                    <img src="{{ url_for('static', filename='samples/canadian-sign-examples.webp') }}" alt="Collection of Canadian traffic signs">
+                                    <span class="sample-option-footer"><strong>Canadian sign collection</strong><span>Try sample →</span></span>
+                                </button>
+                            </div>
+                        </div>
+                        <form id="upload-form">
+                            <label class="drop-zone hero-drop-zone" id="drop-zone" for="image-input">
+                                <input type="file" id="image-input" name="image" accept=".jpg,.jpeg,.png,.webp,.bmp,image/*">
+                                <span class="upload-icon" aria-hidden="true">↑</span>
+                                <strong>Drop an image here</strong>
+                                <span class="drop-subtitle">or browse JPG, PNG, WEBP or BMP · up to 10 MB</span>
+                                <span class="browse-button">Choose image</span>
+                            </label>
+                            <div class="upload-actions">
+                                <div class="selected-file" id="selected-file" hidden></div>
+                                <button class="button button-primary analyze-hero-button" id="analyze-button" type="submit" {% if not model_ready %}disabled{% endif %}>
+                                    <span id="button-text">Analyze traffic signs</span><span aria-hidden="true">→</span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- This stack presents a road scene, an object detection result, and recognized sign examples. -->
+                <div class="hero-visual" aria-label="Traffic sign recognition process examples">
+                    <div class="visual-heading"><span class="eyebrow">COMPUTER VISION IN PRACTICE</span></div>
+                    <article class="vision-card">
+                        <div class="vision-image scene-image" role="img" aria-label="Road scene with traffic signs"></div>
+                        <div class="vision-caption"><span class="vision-index">01</span><div><strong>Road scene</strong><small>Traffic signs in the input image</small></div><span class="vision-state">INPUT</span></div>
+                    </article>
+                    <article class="vision-card">
+                        <div class="vision-image detection-image" role="img" aria-label="Traffic sign detection with bounding boxes"></div>
+                        <div class="vision-caption"><span class="vision-index">02</span><div><strong>Object detection</strong><small>YOLO11n locates each sign</small></div><span class="vision-state">YOLO</span></div>
+                    </article>
+                    <article class="vision-card">
+                        <div class="vision-image classification-image" role="img" aria-label="Traffic sign classification examples"></div>
+                        <div class="vision-caption"><span class="vision-index">03</span><div><strong>Sign recognition</strong><small>CNN predicts a class per crop</small></div><span class="vision-state">CNN</span></div>
+                    </article>
+                </div>
+            </section>
+
+            <section class="stats-row" aria-label="Project facts">
+                <div class="stat-card"><span class="stat-number">326</span><span class="stat-label">CNN classes</span></div>
+                <div class="stat-card"><span class="stat-number">2-stage</span><span class="stat-label">Detection + classification</span></div>
+                <div class="stat-card"><span class="stat-number">YOLO11n</span><span class="stat-label">Object detector</span></div>
+                <div class="stat-card"><span class="stat-number">CNN</span><span class="stat-label">Sign classifier</span></div>
+                <!-- This card shows the verified training split size from the earlier project records. -->
+                <div class="stat-card"><span class="stat-number">68,898</span><span class="stat-label">Training + validation samples</span></div>
+            </section>
+
+            <!-- This section displays inference results while the upload form remains in the hero. -->
+            <section class="demo-section section-block" id="recognition-results">
+                <div class="section-heading">
+                    <div>
+                        <h2>Try the recognition system</h2>
+                    </div>
+                </div>
+
+                {% if not model_ready %}
+                <div class="setup-alert">
+                    <strong>Models are not ready yet.</strong>
+                    <p>{{ model_error or "Check the models folder and restart the app." }}</p>
+                    <p>See <code>README_zh.md</code> for setup instructions.</p>
+                </div>
+                {% endif %}
+
+                <div class="demo-grid results-grid">
+                    <div class="panel result-panel">
+                        <div class="panel-title"><span class="step-number">02</span><div><h3>Recognition result</h3><p>Detected boxes and predicted classes appear here.</p></div></div>
+                        <div class="result-placeholder" id="result-placeholder">
+                            <div class="placeholder-icon">⌗</div>
+                            <strong>Your result will appear here</strong>
+                            <span>Upload an image and run the model to get started.</span>
+                        </div>
+                        <div class="loading-state" id="loading-state" hidden>
+                            <div class="spinner"></div><strong>Analyzing image…</strong><span>YOLO detection → CNN classification</span>
+                        </div>
+                        <div class="error-message" id="error-message" hidden></div>
+                        <div class="result-content" id="result-content" hidden>
+                            <img id="result-image" alt="Traffic sign recognition output">
+                            <div class="result-summary" id="result-summary"></div>
+                            <div class="prediction-list" id="prediction-list"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section-block pipeline-section" id="how-it-works">
+                <div class="section-heading">
+                    <div><h2>Two models. One workflow.</h2></div>
+                </div>
+                <div class="pipeline-grid">
+                    <article class="pipeline-card"><span class="pipeline-index">01 / DETECT</span><div class="pipeline-icon">▣</div><h3>YOLO11n detector</h3><p>Finds traffic sign locations in the input image and returns bounding boxes with detection confidence scores.</p><span class="tag">Object detection</span></article>
+                    <article class="pipeline-card"><span class="pipeline-index">02 / CROP</span><div class="pipeline-icon">⌗</div><h3>Crop each sign</h3><p>Each detected region is cropped from the original image, converted to RGB and resized to 64 × 64 pixels.</p><span class="tag">Image preprocessing</span></article>
+                    <article class="pipeline-card"><span class="pipeline-index">03 / CLASSIFY</span><div class="pipeline-icon">◈</div><h3>326-class CNN</h3><p>The CNN predicts a traffic sign class for each crop and returns a classification confidence score.</p><span class="tag">Image classification</span></article>
+                </div>
+            </section>
+
+            <section class="section-block about-section" id="about">
+                <div class="about-copy">
+                    <h2>From trained models to an interactive AI demo.</h2>
+                    <p>This project connects a trained object detector with a separate image classifier to create an end-to-end traffic sign recognition prototype.</p>
+                    <p>The website uses existing model checkpoints. It does not retrain the models when an image is uploaded.</p>
+                </div>
+                <div class="tech-panel">
+                    <h3>Technology stack</h3>
+                    <div class="tech-row"><span>Detection</span><strong>Ultralytics YOLO11n</strong></div>
+                    <div class="tech-row"><span>Classification</span><strong>PyTorch CNN · 326 classes</strong></div>
+                    <div class="tech-row"><span>Backend</span><strong>Python + Flask</strong></div>
+                    <div class="tech-row"><span>Frontend</span><strong>HTML · CSS · JavaScript</strong></div>
+                    <div class="tech-row"><span>Inference</span><strong>{{ device_name }}</strong></div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="footer">
+            <a class="brand footer-brand" href="/"><span class="brand-mark">TS</span><span>Traffic Sign <strong>AI</strong></span></a>
+            <span class="footer-disclaimer">Research prototype for intelligent-driving assistance only. Not validated for real-world driving. Do not use it to make driving decisions; the project team accepts no responsibility for real-world use.</span>
+            <a href="#top" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">Back to top ↑</a>
+        </footer>
+    </div>
+    <script src="{{ url_for('static', filename='app.js') }}?v=3"></script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+
+MTSD TRAFFIC SIGN CLASSIFICATION PROJECT
+PROJECT SAVE POINT
+
+DATASET
+Training samples: 60,162
+Validation samples: 8,736
+Number of classes: 326
+Class labels: 0 to 325
+
+BASELINE CNN
+Completed epochs: 20
+Best validation accuracy: 90.66%
+Best epoch: 19
+Final training accuracy: 95.71%
+Final validation accuracy: 90.49%
+Training time: 21.04 minutes
+
+DATA AUGMENTATION CNN
+Completed epochs: 20
+Best validation accuracy: 92.91%
+Best epoch: 17
+Final training accuracy: 90.02%
+Final validation accuracy: 92.79%
+Final validation loss: 0.3015
+Training time: 46.41 minutes
+
+MODEL COMPARISON
+Best validation accuracy improvement: 2.26 percentage points
+
+NEXT TASK
+Evaluate both best models on the independent test dataset.
+Generate test accuracy, classification reports, and confusion matrices.
+
+IMPORTANT
+The cropped images remain in their original folders.
+This backup contains experiment outputs and important metadata.
+Do not delete the original MTSD_Cropped folder.
