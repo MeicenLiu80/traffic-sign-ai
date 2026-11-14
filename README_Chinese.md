@@ -7,6 +7,14 @@ YOLO 和 CNN 在系统中负责不同工作。实验对比的是基线 CNN 和�
 
 > 这是研究原型，不是自动驾驶或驾驶辅助系统。请勿依据模型输出作出驾驶决定。
 
+ ## 在线演示（Live Demo）
+
+本项目开发并部署了一个在线交通标志识别系统：**[AutoVisionLab](https://autovisionlab.online)**。
+
+用户可以上传道路场景图片，体验训练好的 YOLO11n 目标检测模型和 CNN 图像分类模型。系统能够自动检测图片中的交通标志，并显示检测框、预测类别以及对应的置信度分数。
+
+**在线体验：** https://autovisionlab.online
+
 ## 主要功能
 
 - 上传 JPG、JPEG、PNG、WEBP 或 BMP 图片，最大 10 MB。
