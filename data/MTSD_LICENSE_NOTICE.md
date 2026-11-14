@@ -1,5 +1,6 @@
 This Mapillary Traffic Sign Dataset is provided under the Creative Commons Attribution NonCommercial Share Alike (CC BY-NC-SA) license available here: https://creativecommons.org/licenses/by-nc/4.0/legalcode
 
+
 # Dataset License
 
 The Mapillary Traffic Sign Dataset (MTSD) is provided under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) license.
@@ -17,3 +18,4 @@ For more information, please visit the [official Creative Commons license page](
 This project uses MTSD for academic research and deep learning experiments. The original dataset images and annotations are not redistributed in this repository.
 
 Please obtain the dataset from the [official Mapillary Traffic Sign Dataset page](https://www.mapillary.com/dataset/trafficsign) and follow its licensing requirements.
+
