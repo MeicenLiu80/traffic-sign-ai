@@ -1,3 +1,4 @@
+[English](README.md) | [中文](README_Chinese.md)
 # Traffic Sign AI
 
 A Flask research website that detects traffic signs in road images and classifies each detected crop. The project combines a YOLO11n detector with a separate 326-class CNN classifier.
