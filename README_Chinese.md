@@ -1,3 +1,4 @@
+[English](README.md) | [中文](README_Chinese.md)
 # Traffic Sign AI 道路标志识别
 
 这是一个使用 Flask 的道路标志识别研究项目。系统先用 YOLO11n 在道路场景中检测标志，再把检测区域裁剪出来，交给 326 类 CNN 分类器。
