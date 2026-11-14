@@ -1,7 +1,15 @@
 [English](README.md) | [中文](README_Chinese.md)
 # Traffic Sign AI
 
-A Flask research website that detects traffic signs in road images and classifies each detected crop. The project combines a YOLO11n detector with a separate 326-class CNN classifier.（ https://autovisionlab.online ）
+A Flask research website that detects traffic signs in road images and classifies each detected crop. The project combines a YOLO11n detector with a separate 326-class CNN classifier.
+
+## Live Demo
+
+A web-based demonstration of the traffic sign recognition system is available at **[AutoVisionLab](https://autovisionlab.online)**.
+
+Users can upload road images to test the trained YOLO11n detection model and CNN classification model. The application displays detected traffic signs, predicted categories, bounding boxes, and confidence scores.
+
+**Try it here:** https://autovisionlab.online
 
 ## Project goal and pipeline
 
